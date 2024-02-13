@@ -10,7 +10,7 @@ WORKDIR /src
 COPY ["Sml.Poc.NetCore.GithubActions.Api/Sml.Poc.NetCore.GithubActions.Api.csproj", "Sml.Poc.NetCore.GithubActions.Api/"]
 RUN dotnet restore "./Sml.Poc.NetCore.GithubActions.Api/./Sml.Poc.NetCore.GithubActions.Api.csproj"
 COPY . .
-WORKDIR "/src/Sml.Poc.NetCore.GithubActions"
+WORKDIR "/src/Sml.Poc.NetCore.GithubActions.Api"
 RUN dotnet build "./Sml.Poc.NetCore.GithubActions.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
